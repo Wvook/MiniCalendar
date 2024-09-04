@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-// 2번 수정 보기
+
 public class Calendar {
     private static final int[] MAX_DAYS = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     private static final int[] LEAP_YEAR = {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -39,7 +39,7 @@ public class Calendar {
             count += delta;
         }
 
-        count = day - 1; //이게 있으면 2칸이 더 밀림 그래서 배열의 0번째에 0을 넣어주고 month - 1을 month로 바꿔줌
+        count += day - 1; //이게 있으면 2칸이 더 밀림 그래서 배열의 0번째에 0을 넣어주고 month - 1을 month로 바꿔줌
 
         int weekday = (count + STANDARD_WEEKDAY) % 7;
 
@@ -77,7 +77,7 @@ public class Calendar {
     public void registerPlan(String strDate, String plan) throws ParseException {
         Date date = new SimpleDateFormat("yyyy-MM-dd").parse(strDate);
         planMap.put(date, plan);
-        System.out.println(date);
+        //System.out.println(date);
     }
 
     private static HashMap<Date, String> planMap;

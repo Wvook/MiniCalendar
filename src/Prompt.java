@@ -1,6 +1,6 @@
 import java.text.ParseException;
 import java.util.Scanner;
-// 클래스로 구혀하기 부터 시작하면 된다.
+
 public class Prompt {
 
     private void cmdCal(Scanner s, Calendar c) {
@@ -21,6 +21,27 @@ public class Prompt {
         } else{ c.printCalendar(year, month);;
 
             System.out.println("");
+        }
+    }
+
+    public int parseDay(String week){
+        switch (week) {
+            case "SU":
+                return 0;
+            case "MO":
+                return 1;
+            case "TU":
+                return 2;
+            case "WE":
+                return 3;
+            case "TH":
+                return 4;
+            case "FR":
+                return 5;
+            case "SA":
+                return 6;
+            default:
+                return 0;
         }
     }
 
@@ -98,7 +119,7 @@ public class Prompt {
         Prompt p = new Prompt();
         p.runPrompt();
 
-        cal.registerPlan("2020-07-08", "Let's hava dinner!");
+        //cal.registerPlan("2020-07-08", "Let's hava dinner!");
 
 
     }
